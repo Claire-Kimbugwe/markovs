@@ -73,22 +73,14 @@ def make_text(chains):
 
     words = []
 
-    # your code goes here
-    # random_start_key = choice(list(chains.keys()))
-    # words.append(random_start_key)
-    # selected_word = ''
-
-    # while selected_word != 'am?':
-    #     random_start_key = choice(list(chains.keys()))
-    #     print(random_start_key)
-    #     selected_word = choice(chains[random_start_key])
-    #     print(selected_word)
-    #     words.append(selected_word)
+    #your code goes here
 
 
     for key,values in chains.items():
         selected_word = choice(values)
         words.append(selected_word)
+
+
 
     return " ".join(words)
 
