@@ -11,10 +11,11 @@ def open_and_read_file(file_path1, file_path2):
     the file's contents as one string of text.
     """
 
-    # your code goes here
+    # open first file
     with open(file_path1, 'r') as content1:
         content1 = content1.read()
 
+    #further studies 4 to open a second file and combine with first
     with open(file_path2, 'r') as content2:
         content2 = content2.read()
 
@@ -92,16 +93,17 @@ def make_text(chains):
         selected_word = choice(chains[random_start_key])
         words.append(selected_word)
         random_start_key = tuple(words[-2:])
-        #if we reach a sentence end punctuation, stop generating and break out
-        if selected_word in ['.','?','!']:
+        #further studies 3: if we reach a sentence end punctuation, stop generating and break out
+        if selected_word[-1] in ['.','?','!']:
             break
 
     return " ".join(words)
 
 
 input_path1 = sys.argv[1] #further studies one to change filename into sys.argv format
-input_path2 = sys.argv[2]
-# Open the file and turn it into one long string
+input_path2 = sys.argv[2] #further studies four, to take in two files
+
+# Open both the file and turn it into one long string
 input_text = open_and_read_file(input_path1, input_path2)
 
 # Get a Markov chain
