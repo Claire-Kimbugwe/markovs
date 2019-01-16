@@ -73,12 +73,13 @@ def make_text(chains):
 
     words = []
 
-    #your code goes here
+    #chooses a random key to start generating at
     random_start_key = choice(list((chains.keys())))
     for word in random_start_key:
         words.append(word)
     print(random_start_key)
     
+    #loops through dictionary chains starting at random key
     while random_start_key in chains:
         selected_word = choice(chains[random_start_key])
         words.append(selected_word)
